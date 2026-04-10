@@ -1,0 +1,314 @@
+/** VARIABLES **/
+:root {
+  /* font variables */
+  --fFamily:Arial, Helvetica, sans-serif;
+  --titleFont:'dt_nouveauregular';
+  /*--headerFont:Garamond, serif;*/
+  --headerFont:'jacques_francoisregular';
+  --atlantisFont:'atlanteanregular';
+  --fsDefault:16px;
+  --indent:25px;
+
+  /*color variables */
+  /* --bgcolor: #201E1C;
+    --talkcolor: #1c1b19;
+  --talkborder: #1E1D1A;
+  */
+  --bgGradient:var(--menuImg), radial-gradient(circle, #151515 10%, #101010 33%, #090909 100%);
+  --bgcolor: #111111;
+  --bgcolorTransparent:rgb(17, 17, 17, 0.85);
+  --margincolor:#0f0f0f;
+  --textcolor: #a69f92;
+  --iltextcolor:#887361;
+  --ilpaper:#976b50;
+  --engravedtext:#24160f;
+  --ilengraved:#5E412F;
+
+  --linkcolor: #A18940;
+  --linkhover: #DFC65E;
+
+  --talkcolor: #121212;
+  
+  --ilMargin:2em;
+  --lineHeight:1.75em;
+
+  --menucolor: #0f0f0f;
+  --menucolorTransparent:rgb(15, 15, 15, 0.86);
+  --menubutton: #070707;
+  --menuborder:#181818;
+  --menuborderdarker:#0c0c0c;
+  --menuborderbright:#212121;
+  --menuhover:#1a1a1a;
+  --menulink:#685745;
+
+  --timeFilter:invert(4%) sepia(9%) saturate(2298%) hue-rotate(329deg) brightness(101%) contrast(92%);
+--timeIconFilter:invert(7%) sepia(18%) saturate(824%) hue-rotate(333deg) brightness(94%) contrast(90%);
+
+
+  --fade:#584941;
+
+  
+  --transparentBG:rgba(12, 12, 12, 0.95);
+  --menuImg:none;
+  --portBG:url('../gui/port/portrait_bg.png');
+  --portFrame:url('../gui/port/portrait_frame.png');
+  --qPortBG:url('../gui/port/portrait_qbg.png');
+  --qPortFrame:url('../gui/port/portrait_qframe.png');
+  --portImg:url('');
+  --portHuddle:url('../gui/port/huddleTalk.png');
+
+  --codexImg: url('../gui/codex.png');
+  --codexBg: linear-gradient(180deg, #131313 0%, #0a0a0a 100%);
+  --codexPaper: linear-gradient(180deg, #181818 0%, #0d0d0d 100%);
+  --profilePic:url('');
+  --locBannerImg:url('');
+  --inventoryImg:url('');
+  --timeBanner:url('../gui/time_banner.svg');
+ 
+
+  
+  --anim1:url('');
+  --anim2:url('');
+  --anim3:url('');
+
+  --mapImg:url('');
+  --map1:url('');
+  --map2:url('');
+  --map3:url('');
+  --map4:url('');
+  --map5:url('');
+  --map6:url('');
+  --map7:url('');
+    --map8:url('');
+  --map0:url('');
+  --campButton: url('../gui/map/act1/campButton.png');
+  --returnButton: url('../gui/map/act1/returnButton.png');
+
+  --alert:#376056;
+  --alertY:#AE8C44;
+  --alertYdark:#31291b;
+  --alertR: #B15C26;
+  --alertRdark: #311d12;
+  --alertG: #6D6C4B;
+  --alertGdark: #28281c;
+
+  --h1color: #8A4115;
+  --h1high: #BB9132;
+  --h1gradient: #864c22;
+  --hcolor: #DFD6C4;
+  --nametag:#716b53;
+  --nthigh:#999979;
+  --ntgradient:#575e5a;
+  --whitec:#BBAE7F;
+  --whitehigh:#C6BA8A;
+  --whitegradientC:#806a4e;
+  --accent:#957a58;
+  --subtitle:#8a6946;
+  
+  --goldbg:var(--h1color);
+  --goldgradient:linear-gradient(180deg, var(--h1gradient) 30%, var(--h1high) 35%, var(--h1color) 55%, var(--h1gradient) 66%);
+  --silverbg:var(--nametag);
+  --silvergradient:linear-gradient(180deg, var(--ntgradient) 30%, var(--nthigh) 35%, var(--nametag) 50%, var(--ntgradient) 66%);
+  --whitebg:var(--whitec);
+  --whitegradient:linear-gradient(180deg, var(--whitegradientC) 20%, var(--whitehigh) 25%, var(--whitec) 33%, var(--whitegradientC) 75%);
+
+  --tag:var(--fade);
+  --yellow:#c7a04e;
+  --yellowDark:#2f251c;
+  --red: #c9472a;
+  --redDark:#2f1a15;
+  --green: #858a5f;
+  --greenDark:#24241e;
+  --blue: #376370;
+  --blueDark: #191f20;
+  --white: #ebe7b9;
+  --whiteDark:#31312e;
+  --black: #545363;
+  --blackDark:#17171a;
+  --gold:#917a31;
+  --pink:#823E48;
+
+
+  --blue2: #47667F;
+  --blue3: #547A7E;
+  
+  
+  --codexPaperColor:#BB7459;
+  
+  --alertSeal:#6f2a2d;
+  --alertSealGreen:#484f31;
+  --alertSealCodex:#1e423f;
+  --alertSealRed:#752f1a;
+  --alertSealDead:#372f32;
+  --alertSealMoney:#734829;
+  --alertSealYellow:#825a27;
+  --alertSealQuestObj:#9b6c2e;
+  --alertSealQuestMain:#5d7b6f;
+  --alertSealQuestSide:#713b20;
+  
+  
+  --questObjBorder:#442f1d;
+  --questMBorder:#292b2a;
+  --questSBorder:#39241a;
+  
+
+  
+  --provBG: url('../gui/map/act1/lordships/provBG.jpg');
+  --mapColorInactive:#4e3d35;
+  --mapColor:#41312a;
+  --mapHover:#1c1512;
+  --mapTextBorder:#ceb99b;
+  --mapShadow:2px 2px 0 var(--mapTextBorder), 2px -2px 0 #ceb99b, -2px 2px 0 var(--mapTextBorder), -2px -2px 0 var(--mapTextBorder), 2px 0px 0 var(--mapTextBorder), 0px 2px 0 var(--mapTextBorder), -2px 0px 0 var(--mapTextBorder), 0px -2px 0 var(--mapTextBorder);
+  --markerX: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+  --markerCap: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  --markerImp:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  --markerLM:polygon(50% 0%, 0% 100%, 100% 100%);
+  --markerPOI:unset;
+  --markerTown:circle(40%);
+
+
+  --sepia: sepia(60%);
+  
+  --bevelClip: polygon(5% 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%, 0 5%);
+
+  --textShadow:-1px -1px rgba(0, 0, 0, 0.3), 1px 1px rgba(222, 148, 118, 0.15);
+  --textShadowB: drop-shadow(2px 2px rgba(0, 0, 0, 0.66)) drop-shadow(-1px -1px rgba(222, 148, 118, 0.15));
+  --insetShadow:
+  drop-shadow(-0.2em -0.2em 0 rgba(0, 0, 0, 0.25))
+  drop-shadow(0.2em 0.2em 0 rgba(0, 0, 0, 0.25))
+  drop-shadow(-0.2em 0.2em 0 rgba(0, 0, 0, 0.25))
+  drop-shadow(0.2em -0.2em 0 rgba(0, 0, 0, 0.25));
+  --clipShadow:drop-shadow(2px 4px 0px rgba(0, 0, 0, 0.25));
+  --clipShadowCodex:drop-shadow(4px 8px 0px rgba(0, 0, 0, 0.25));
+  --menuShadow:
+  drop-shadow(0.25em 0px 0.5em rgba(0, 0, 0, 0.15))
+  drop-shadow(-0.25em 0px 0.5em rgba(0, 0, 0, 0.15));
+  --clipShadowSubtle:drop-shadow(-1px 2px 0px rgba(0, 0, 0, 0.15));
+  --talkShadow:
+  drop-shadow(1px -1px 0px rgba(41, 33, 30, 1))
+  drop-shadow(1px 1px 0px rgba(41, 33, 30, 1))
+  drop-shadow(-1px -1px 0px rgba(41, 33, 30, 1))
+  drop-shadow(-1px 1px 0px rgba(41, 33, 30, 1));
+  --titleIconShadow:
+  drop-shadow(-1px 0px 0px var(--menubutton))
+  drop-shadow(1px 0px 0px var(--menubutton))
+  drop-shadow(1px 1px 0px var(--menubutton))
+  drop-shadow(-1px -1px 0px var(--menubutton))
+  drop-shadow(1px 1px 0px var(--menubutton))
+  ;
+  
+  --textGlow:-1px -1px 0.05em rgba(223, 198, 94, 0.15), 1px 1px 0.05em rgba(223, 198, 94, 0.15),1px -1px 0.05em rgba(223, 198, 94, 0.15), -1px 1px 0.05em rgba(223, 198, 94, 0.15);
+  --textGlowB:-2px -2px 0.15em rgba(223, 198, 94, 0.15), 2px 2px 0.15em rgba(223, 198, 94, 0.15),2px -2px 0.15em rgba(223, 198, 94, 0.15), -2px 2px 0.15em rgba(223, 198, 94, 0.15);
+  
+  --transition:0.7s;
+
+  --fadeGradient:linear-gradient(to top, black 80%, transparent 100%);
+  --fadeGradientB:linear-gradient(to bottom, black 80%, transparent 100%);
+
+  --horizontalClip:polygon(2% 0, 98% 0, 100% 5%, 100% 95%, 98% 100%, 2% 100%, 0 95%, 0 5%);
+  --verticalClip:polygon(5% 0%, 95% 0%, 100% 2%, 100% 98%, 95% 100%, 5% 100%, 0 98%, 0 2%);
+  --chevLeftB:polygon(100% 0, 100% 100%, 0% 100%, 50% 50%, 0% 0%);
+  --chevRightB:polygon(100% 0%, 50% 50%, 100% 100%, 0 100%, 0 0);
+  --chevDown:polygon(100% 75%, 49% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+  --chevUp: polygon(100% 100%, 50% 75%, 0 100%, 0 25%, 50% 0, 100% 25%);
+  --chevRight:polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  --chevLeft:polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+
+
+  --portHeight:120px;
+  --partyPortHeight:150px;
+  --partyQHeight:170px;
+  --miniPortHeight:100px;
+  --portClip:polygon(15% 5%, calc( 100% - 15%) 5%, calc( 100% - 5%) 15%, calc( 100% - 5%) calc( 100% - 15%), calc( 100% - 15%) calc( 100% - 5%), 15% calc( 100% - 5%), 5% calc( 100% - 15%), 5% 15%);
+
+  --rtElement:url('');
+  --rtBG:url('');
+  --rtBGtile:url('');
+  --rtBGColor:#fff;
+
+
+	--menuBoxHeight:500px;
+	--menuBoxMax: 66vh;
+	
+
+
+	--passageT: 0.4s;
+	
+	--buttonlink:#aa8b6a;
+	--buttonborder:#251E1B;
+	--buttonborderhover:#57341c;
+	--tanborder:#3A2E2B;
+	--buttonSeal:#3A2E2B;
+  --buttonSealHover:#a35722;
+	
+	--locHeaderHeight:14%;
+	--locHeaderText:3em;
+	
+	--tailBorder:0em;
+	--tailWidth:1em;
+	--buttonBorderW:0.05em;
+	--tailColor:var(--menubutton);
+  --tailColorHover:var(--menuhover);
+	}
+	
+	
+/* IMAGES!!!! */
+  @media screen and (min-width:992px){
+    :root {
+      
+      --partyQHeight:14em;
+    --portHeight:11em;
+  --partyPortHeight:11em;
+  --miniPortHeight:7em;
+  
+  	--locHeaderHeight:17%;
+    }
+}
+
+@media screen and (min-width:1200px){
+:root{
+--locHeaderHeight:18%;
+}
+}
+
+@media screen and (max-width:750px){
+  :root {
+    --fontSize:0.9em;
+     
+  }
+}
+
+@media screen and (max-width:550px){
+  :root {
+    --fontSize:0.8em;
+  }
+}
+
+
+@media screen and (max-width:475px){
+  :root {
+    --fontSize:0.7em;
+  }
+}
+
+
+
+
+
+@media screen and (max-width:500px){
+  :root {
+     --partyQHeight:12em;
+    --portHeight:10em;
+  --partyPortHeight:11em;
+
+  }
+}
+
+@media screen and (max-width:475px){
+  :root {
+     --partyQHeight:10em;
+    --portHeight:8em;
+  --partyPortHeight:8em;
+
+  }
+}

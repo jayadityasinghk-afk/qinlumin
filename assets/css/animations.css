@@ -1,0 +1,266 @@
+
+
+/******** ANIMS ************************/
+
+.reveal {
+	position: relative;
+	opacity: 0;
+	transition: .3s;
+	transition-delay:.2s;
+}
+
+.revealL,
+.revealR {
+	opacity: 0;
+	transition: .4s;
+	position: relative;
+	transition-delay:.2s;
+}
+
+.revealL {
+	transform: translateX(-5px)
+}
+
+.revealR {
+	transform: translateX(5px)
+}
+
+.reveal.active,
+.revealL.active,
+.revealR.active {
+	transform: translateY(0);
+	opacity: 1
+}
+
+/******** STOP ANIMS ************************/
+
+.noAnim .reveal,.noAnim .revealL,.noAnim .revealR{
+  transform: translateY(0);
+	opacity: 1
+}
+
+/*****************/
+
+.revealMenu {
+	position: relative;
+	animation: 1.5s fadeIn
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+
+	100% {
+		opacity: 1
+	}
+}
+
+@keyframes newLoc {
+	0% {
+		height: var(--locHeaderHeight)
+	}
+
+	100% {
+		height: 25vh
+	}
+}
+
+@keyframes liltCam {
+	25% {
+		transform: rotate(-2.5deg)
+	}
+
+	75% {
+		transform: rotate(2.5deg)
+	}
+}
+
+@keyframes stutterCam {
+
+	0%,
+	100% {
+		transform: translate(0, 0)
+	}
+
+	25% {
+		transform: translate(.03em, -.01em)
+	}
+
+	50% {
+		transform: translate(-.02em, .02em)
+	}
+
+	75% {
+		transform: translate(.03em, -.03em)
+	}
+}
+
+@keyframes yellCam {
+
+	10%,
+	30%,
+	70% {
+		transform: translate(-1px, -2px) scale(1, 1.1)
+	}
+
+	20% {
+		transform: translate(2px, 1px) scale(.99, 1.1)
+	}
+
+	40% {
+		transform: translate(1px, 2px) scale(1, 1.1)
+	}
+
+	50% {
+		transform: translate(-1px, -2px) scale(.995, 1.1)
+	}
+
+	60% {
+		transform: translate(0, 2px) scale(1, 1.11)
+	}
+
+	80% {
+		transform: translate(1px, 2px) scale(.99, 1.1)
+	}
+
+	90% {
+		transform: translate(-2px, -1px) scale(1, 1.1)
+	}
+
+	100% {
+		transform: translate(2px, 1px) scale(.995, 1.1)
+	}
+}
+
+@keyframes shockCam {
+
+	0%,
+	48% {
+		transform: translate(1px, 0)
+	}
+
+	15% {
+		transform: translate(-1px, 1px)
+	}
+
+	33% {
+		transform: translate(-1px, -1px)
+	}
+
+	66% {
+		transform: translate(1px, 1px)
+	}
+
+	81% {
+		transform: translate(0, 1px)
+	}
+}
+
+@keyframes intenseCam {
+
+	0%,
+	48% {
+		transform: translate(1px, 0)
+	}
+
+
+
+	33% {
+		transform: translate(0, 0)
+	}
+
+
+
+	81% {
+		transform: translate(0, 1px)
+	}
+}
+
+@keyframes drunkCam {
+
+	0%,
+	60% {
+		text-shadow: 0 0 0 var(--fade)
+	}
+
+	20% {
+		text-shadow: 1px 0 0 var(--fade);
+		transform: rotate(1deg)
+	}
+
+	24%,
+	33% {
+		text-shadow: 2px 0 0 var(--fade)
+	}
+
+	37% {
+		text-shadow: 2px 1px 0 var(--fade)
+	}
+
+	40% {
+		text-shadow: 1px -1px 0 var(--fade)
+	}
+
+	50% {
+		text-shadow: 0 -2px 0 var(--fade);
+		transform: rotate(0)
+	}
+
+	66% {
+		text-shadow: -1px 1px 0 var(--fade)
+	}
+
+	68% {
+		text-shadow: -2px 2px 0 var(--fade)
+	}
+
+	70% {
+		text-shadow: -2px 0 0 var(--fade)
+	}
+
+	78% {
+		text-shadow: -2px -1px 0 var(--fade)
+	}
+
+	80% {
+		text-shadow: -1px 0 0 var(--fade);
+		transform: rotate(1deg)
+	}
+
+	85% {
+		text-shadow: 0 2px 0 var(--fade)
+	}
+
+	100% {
+		transform: rotate(0)
+	}
+}
+
+@keyframes singCam {
+	0% {
+		top: .02em
+	}
+
+	33% {
+		top: -.3em
+	}
+
+	66% {
+		top: 0
+	}
+}
+
+@keyframes singsongCam {
+	0% {
+		top: .02em
+	}
+
+	33% {
+		top: 0
+	}
+
+	66% {
+		top: -.05em
+	}
+}

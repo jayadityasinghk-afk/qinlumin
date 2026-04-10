@@ -1,0 +1,869 @@
+/**** MAP **********************************************************************/
+
+
+.mapDisplay {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 75%;
+	margin: auto;
+	min-height: 100px;
+	background-image: var(--mapImg);
+	aspect-ratio: 0.82/1;
+	position: relative;
+	margin: auto;
+	clip-path: var(--verticalClip);
+	font-size: 0.9em;
+}
+
+.map-prov-holder {
+	position: absolute;
+	mix-blend-mode: overlay;
+}
+
+.map-clickable .map-prov-holder {
+	cursor: pointer;
+}
+
+
+.map-clickable .map-prov-holder:hover .map-blur,
+.map-prov-holder.active .map-blur {
+
+	mix-blend-mode: overlay;
+}
+
+.map-clickable .map-prov-holder:hover .map-prov,
+.map-prov-holder.active .map-prov {
+	mix-blend-mode: overlay;
+	opacity: 0.75;
+}
+
+
+.mapDisplay {
+	--alertY: #7a5f33;
+	--alertR: #823e1a;
+	--alertG: #4d4c32;
+	--red: #8c321d;
+	--blue: #23414a;
+}
+
+.map-prov {
+	position: absolute;
+	background-color: #ceb99b;
+	mix-blend-mode: overlay;
+	transition: var(--transition);
+	opacity: 0;
+	z-index: 1;
+	width: 100%;
+	margin: auto;
+	filter: blur(0.1em);
+}
+
+.map-prov-label {
+	position: absolute;
+	z-index: 2;
+	color: var(--mapColor);
+	text-shadow: var(--mapShadow);
+	font-family: var(--headerFont);
+	font-weight: bold;
+	font-variant: small-caps;
+	cursor: default;
+	left: -300%;
+	top: -200%;
+	text-align: center;
+}
+
+.map-prov-label-point {
+	position: absolute;
+	height: 1%;
+	width: 1%;
+	aspect-ratio: 1/1;
+	background-color: red;
+}
+
+.map-label-holder {
+	font-size: 1.75em;
+	color: var(--mapColor);
+	text-shadow: var(--textShadow);
+	font-family: var(--headerFont);
+	font-weight: bold;
+	font-variant: small-caps;
+	cursor: default;
+	position: absolute;
+	bottom: 2%;
+	right: 2%;
+	min-width: 75%;
+	max-width:80%;
+	border-bottom: 2px dotted var(--mapColorInactive);
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@media screen and (max-width:992px) {
+	.map-label-holder {
+		font-size: 1.1em;
+	}
+}
+
+@media screen and (max-width:1000px) {
+	.map-label-holder {
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width:1300px) {
+	.map-label-holder {
+		font-size: 1.7em;
+	}
+}
+
+.map-marker-holder {
+	position: absolute;
+	filter: drop-shadow(-1px 1px 0px var(--mapTextBorder)) drop-shadow(1px -1px 0px var(--mapTextBorder)) drop-shadow(-1px -1px 0px var(--mapTextBorder)) drop-shadow(1px 1px 0px var(--mapTextBorder));
+	width: 2.5%;
+	aspect-ratio: 1/1;
+	z-index: 1;
+
+}
+
+.map-marker-holder:hover {
+	z-index: 2;
+}
+
+.map-marker {
+	margin: auto;
+	width: 70%;
+	background-color: var(--mapColor);
+	clip-path: var(--markerTown);
+	aspect-ratio: 1/1;
+	transition: var(--transition);
+}
+
+.map-marker.loc-defunct {
+	background-color: #825649;
+}
+
+.map-marker.loc-occupied-tri {
+	background-color: #a26416;
+}
+
+
+.map-marker.loc-occupied-nn {
+	background-color: #881a0f;
+}
+
+.map-marker.current-location {
+	width: 90%;
+	background-color: #793b0d;
+	clip-path: var(--markerX);
+}
+
+
+.map-marker.map-marker-capital {
+	clip-path: var(--markerCap);
+	width: 120%;
+}
+
+.map-marker.map-marker-important {
+	clip-path: var(--markerImp);
+	width: 75%;
+}
+
+.map-marker.map-marker-poi {
+	clip-path: unset;
+}
+
+.map-marker.map-marker-landmark {
+	clip-path: var(--markerLM);
+}
+
+.map-marker-lesser{
+ width:70%;
+}
+
+.map-marker.map-marker-important.map-marker-lesser{
+ width:60%;
+}
+
+.shipHolder .map-marker,
+.shipHolder .map-marker.map-marker-landmark {
+	width: 100%;
+}
+
+.shipHolder .map-marker.map-marker-capital {
+	width: 150%;
+}
+
+.shipHolder .map-marker.map-marker-important {
+	width: 105%;
+}
+
+
+.map-marker-label {
+	transform: scale(0);
+
+	font-size: 0.9em;
+	position: absolute;
+	z-index: 2;
+	color: var(--mapColorInactive);
+	font-family: var(--headerFont);
+	font-weight: bold;
+	font-variant: small-caps;
+	cursor: default;
+	right: 50%;
+	top: -1.5em;
+	text-align: center;
+	transition: var(--transition);
+
+}
+
+.map-marker-holder:hover .map-marker-label {
+	font-size: 1em;
+	transform: scale(1);
+}
+
+.map-codexView {
+	cursor: default !important;
+}
+
+.map-codexView .map-marker-holder {
+	opacity: 0.5;
+}
+
+.map-codexView .map-marker-label {
+	display: none;
+}
+
+.map-codexView .map-marker-holder.active {
+	opacity: 1;
+}
+
+.map-codexView .map-marker-holder.active .map-marker-label {
+	display: block;
+}
+
+.map-codexView .map-prov-holder.active .map-prov {
+
+	filter: blur(0.25em);
+}
+
+.map-codexView .map-label-holder {
+	display: none;
+}
+
+.codexView-mapHolder .map-prov-holder.active .map-prov {
+	filter: unset;
+}
+
+.codex-mapHolder-single .mapDisplay {
+	max-width: 75%;
+}
+
+@media screen and (min-width:500px) {
+	.codex-mapHolder-single .mapDisplay {
+		max-width: 50%;
+	}
+
+}
+
+
+/** LORDSHIP MAP *****/
+
+.codexView-mapGrid .shipHolder {
+	margin-top: 1.5%;
+}
+
+.shipHolder {
+	background-color: #2b231f;
+	padding: 1em;
+	clip-path: var(--horizontalClip);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: var(--provBG);
+}
+
+
+.shipDisplay {
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: auto;
+	background-image: var(--mapImg);
+	aspect-ratio: 1.88/1;
+	position: relative;
+	margin: auto;
+	font-size: 0.9em;
+	z-index: 1;
+}
+
+
+.map-hideLabel .map-marker-label {
+	opacity: 0;
+	z-index: 1;
+	transition: var(--transition);
+}
+
+.codexView-shipHold .map-hideLabel .map-marker-holder:hover .map-marker-label,
+.codexView-shipHold .map-hideLabel .map-marker-holder.active .map-marker-label,.codex-img-view .map-marker-holder.active .map-marker-label{
+	opacity: 1;
+	z-index: 5;
+}
+
+.codexView-shipHold .map-hideLabel .map-marker-holder.active .map-marker-label,.codex-img-view .map-marker-holder.active .map-marker-label{
+	font-size: 1.3em;
+	left: -200%;
+	font-weight: bold;
+
+}
+
+.codexView-shipHold .map-marker-holder.active,.codex-img-view .map-marker-holder.active {
+	color: var(--mapColor);
+	filter: drop-shadow(-1px 1px 0px #b0a43c) drop-shadow(1px -1px 0px #b0a43c) drop-shadow(-1px -1px 0px #b0a43c) drop-shadow(1px 1px 0px #b0a43c);
+}
+
+/**************** TRAVEL MAP ************************************************/
+
+.mapNav {
+	z-index: 2;
+	filter: var(--clipShadow);
+	position: relative;
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	margin-bottom: 1em;
+}
+
+.locText-container,
+.loc-locationName {
+	display: block;
+	overflow: auto;
+	scrollbar-width: none;
+	width: 100%;
+
+}
+
+
+.locText-text,
+.loc-locationName span {
+	white-space: nowrap;
+
+}
+
+.mapNavBody {
+	display: flex;
+	min-height: 200px;
+	height: 100%;
+	background-color: var(--menucolor);
+	border: 2px solid var(--tanborder);
+	border-top: 0;
+	width: calc(100% - 1em);
+	margin-left: 0.25em;
+	margin-right: 0.75em;
+
+}
+
+#mapNavContent,
+#mapSubNavContent {
+	width: 100%;
+	overflow: auto;
+	scrollbar-width: thin;
+	padding: 1em;
+	aspect-ratio: 1/0.5;
+}
+
+#mapSubNavContent li#map-prov-link-camp2::marker{
+  content:'';
+  display:none;
+}
+
+#mapNavContent.hidden,
+#mapSubNavContent {
+	display: none;
+}
+
+#mapSubNavContent.active {
+	display: block;
+}
+
+
+#mapNavContent .locList ul,
+#mapSubNavContent .locList ul {
+	padding-left: 0;
+	margin: 0;
+}
+
+
+.locList {
+	padding: 0.75em;
+}
+
+.mapNavHeaderTitleHolder {
+	max-width: 90%;
+	overflow: hidden;
+
+}
+
+.titleHolder2 {
+	display: table;
+	height: 100%;
+
+}
+
+#mapNavTitle {
+	display: table-cell;
+	color: var(--h1color);
+	font-variant: small-caps;
+	font-family: var(--titleFont);
+	background:var(--goldbg);
+	background: var(--goldgradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	filter: var(--textShadowB);
+	font-size: 1.75em;
+	z-index: 1;
+	position: relative;
+	white-space: nowrap;
+	transform: scaleX(0.75);
+	transform-origin: left;
+	letter-spacing: 0.075em;
+
+	vertical-align: middle;
+}
+
+.mapNavHeader .titleHolder {
+	overflow: auto;
+	scrollbar-width: none;
+	height: 100%;
+
+}
+
+#mapNavSubtitle {
+
+	display: block;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	color: var(--fade);
+	font-size: 0.8em;
+}
+
+
+.mapNavHeaderIco {
+	font-size: 2em;
+	text-align: center;
+	text-shadow: var(--textShadow);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mapNavHeader {
+	display: grid;
+	grid-template-columns: 3em calc(100% - 3em);
+	background-color: var(--menubutton);
+	padding-left: 1em;
+	position: relative;
+	margin-top: 1em;
+
+	filter: var(--clipShadow);
+
+	border: 0.05em solid var(--tanborder);
+	width: calc(100% - 1.6em);
+}
+
+.mapNavHeader:after {
+	position: absolute;
+	content: "";
+	height: calc(100% + 0.125em);
+	top: -0.05em;
+	right: -0.75em;
+	width: 2em;
+	background-color: var(--tanborder);
+	clip-path: var(--chevRight);
+}
+
+
+
+
+.map-loc-btn {
+  font-family: var(--headerFont);
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  text-shadow: var(--textShadow);
+  transition: var(--transition);
+  font-size: 1.05em;
+	padding: 0.66em;
+	filter:var(--clipShadow);
+
+	width: calc(100% - 3em);
+	margin-bottom:0.5em;
+}
+
+.map-loc-btn:hover{
+ color:var(--linkhover); 
+ text-shadow: var(--textGlow);
+}
+
+.map-loc-btn.button.tail{
+  --tailBorder:0.14em;
+  --tailWidth:2em;
+  --tailColor:var(--buttonborder);
+  --tailColorHover:var(--buttonborderhover);
+}
+
+.map-loc-btn .codex-loc-icon {
+	margin-right: 0.5em;
+	background-color: var(--buttonborderhover);
+	transition: var(--transition);
+	opacity: 1;
+	filter: var(--textShadowB);
+}
+
+
+
+.map-loc-btn i {
+	font-size: 1.5em;
+}
+
+.questLoc-prov:hover {
+	cursor: pointer;
+}
+
+.questLoc-prov:hover .map-loc-btn,
+.questLoc-prov:focus .map-loc-btn,
+.questLoc-prov.active .map-loc-btn {
+	cursor: pointer;
+	color: var(--linkhover);
+	text-shadow: var(--textGlow);
+	background-color: var(--menuhover);
+	border-color: var(--buttonborderhover);
+}
+
+.questLoc-prov:hover .map-loc-btn .codex-loc-icon {
+	background-color: var(--gold) !important;
+}
+
+.questLoc-prov:hover .map-loc-btn:after,
+.questLoc-prov:focus .map-loc-btn:after,
+.questLoc-prov.active .map-loc-btn:after {
+	background-color: var(--buttonborderhover);
+}
+
+
+.questLoc-prov {
+	margin-bottom: 1em;
+}
+
+.map-sublist {
+	margin-top: 0.5em;
+
+}
+
+.map-sublist li {
+	font-size: 0.9em;
+	transition: var(--transition);
+	width: calc(100% - 1em);
+	text-transform: lowercase;
+	font-variant: small-caps;
+	margin-left: 1em;
+		opacity:0.66;
+}
+
+.map-sublist li:hover {
+	background-color: var(--menuhover);
+	opacity:1;
+}
+
+
+.mapContainer {
+	position: relative;
+}
+
+.mapContainerOuter {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+
+}
+
+
+#submapHolder {
+	opacity: 0;
+	display: hidden;
+	overflow: hidden;
+	z-index: -10;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#submapHolder.active {
+	display: flex;
+
+
+	opacity: 1;
+	background-color: var(--bgcolorTransparent);
+	z-index: 2;
+}
+
+#submap {
+
+	color: var(--mapColor);
+
+	filter: var(--clipShadow);
+	border-radius: 5px;
+	margin: auto;
+	display: hidden;
+
+}
+
+#submapHolder.active #submap {
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+
+#submap .shipHolder {
+	padding: 0.5em;
+}
+
+
+#submapMap {
+	width: 95%;
+	margin: auto;
+}
+
+#submapMap .map-marker-label {
+	opacity: 0;
+
+}
+
+#submapMap .active .map-marker-label,
+#submapMap .map-marker-holder:hover .map-marker-label {
+	opacity: 1;
+	font-size: 1.1em;
+	transform: scale(1);
+}
+
+#submapMap .map-marker {
+	transition: var(--transition);
+}
+
+#submapMap .map-marker-holder.active .map-marker {
+	background-color: #b56006;
+}
+
+.mapGrid .mapDisplay {
+	position: relative;
+
+}
+
+.mapGrid .mapDisplay .map-marker-label {
+	opacity: 0;
+	transition: var(--transition);
+
+}
+
+.mapGrid .mapDisplay .map-marker-holder:hover .map-marker-label {
+	opacity: 1;
+
+}
+
+.submapLocGrid {
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: #ccb190 #8a7255;
+	padding: 1em;
+}
+
+.loc-list-grid {
+	font-family: var(--headerFont);
+	font-variant: small-caps;
+	background-color: var(--mapColor);
+	color: #ccb190;
+	font-size: 1.4em;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	padding-left: 0.5em;
+	display: grid;
+	grid-template-columns: 1.4em auto;
+	text-shadow: var(--textShadow);
+	width: calc(100% - 2em);
+	position: relative;
+}
+
+.loc-list-grid:after {
+	content: "";
+	height: 100%;
+	width: 1.5em;
+	background-color: var(--mapColor);
+	clip-path: var(--chevRight);
+	position: absolute;
+	top: 0;
+	right: -1em;
+}
+
+.loc-iconHolder .codex-loc-icon {
+	background-color: #ccb190;
+	opacity: 1;
+	filter: var(--textShadowB);
+}
+
+.loc-iconHolder .codex-loc-icon.codex-loc-icon-cap {
+	background-color: #e49f4c;
+}
+
+.locText-container i {
+	text-shadow: var(--textShadow);
+}
+
+.loc-quest-sublist {
+	font-variant: small-caps;
+}
+
+
+#campButton,
+#submapClose {
+	position: absolute;
+	bottom: -1.5em;
+	right: 4.5em;
+	filter: var(--clipShadow);
+	background-color: #c0a482;
+	background-image: var(--campButton);
+	background-position: center;
+	background-size: contain;
+	border-radius: 100em;
+	transition: var(--transition);
+	display: none;
+	opacity: 0;
+}
+
+
+#submapClose.active {
+	opacity: 1;
+	display: block;
+}
+
+#campButton.inactive,
+#campButton.inactive:hover,
+#campButton.inactive:focus {
+	filter: var(--clipShadow) saturate(0) brightness(0.75);
+	cursor: not-allowed;
+}
+
+#submapClose {
+	right: 0.5em;
+	background-image: var(--returnButton);
+}
+
+#campButton:hover,
+#campButton:focus,
+#submapClose:hover,
+#submapClose:focus {
+	filter: var(--clipShadow) brightness(1.75);
+}
+
+#campButton button,
+#submapClose button {
+	aspect-ratio: 1/1;
+	width: 3em;
+	background: 0;
+	border: 0;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.mapGrid .mapContainer {
+	width: 75%;
+	margin: auto;
+
+}
+
+.mapGrid .mapDisplay {
+	width: 75%;
+
+}
+
+.mapGrid .map-label-holder {
+	font-size: unset;
+}
+
+@media screen and (min-width:750px) {
+
+	.mapGrid .mapContainer {
+		width: 100%;
+
+	}
+
+	.mapGrid .mapDisplay {
+		width: 100%;
+
+	}
+
+
+	.mapGrid {
+		display: grid;
+		grid-template-columns: 2.5fr 3fr;
+		column-gap: 1em;
+		width: calc(100% - 0.5em);
+
+	}
+
+
+	.mapNavBody {
+
+		height: 100%;
+
+	}
+
+
+}
+
+
+@media screen and (min-width:992px) and (max-width:1300px) {
+
+	#mapNavTitle {
+		transform: scaleX(0.6);
+	}
+
+
+	.mapGrid .map-label-holder {
+		opacity: 0;
+		border: 0;
+	}
+
+}
+
+
+@media screen and (min-width:1300px) {
+
+
+	.mapGrid .mapContainer {
+		min-height: 400px;
+
+	}
+
+	.mapGrid .mapContainer .mapHolder {
+		max-height: 100%;
+	}
+
+
+	#campButton button,
+	#submapClose button {
+		width: 3.5em;
+	}
+
+	.mapGrid .map-label-holder {
+		font-size: 1.3em;
+
+	}
+
+
+}
+
+/**** LOC ICONS **********************************************************************/

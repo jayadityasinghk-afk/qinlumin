@@ -1,0 +1,345 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot');
+  src:  url('icomoon.eot') format('embedded-opentype'),
+    url('icomoon.ttf') format('truetype'),
+    url('icomoon.woff') format('woff'),
+    url('icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"],#menu-item-saves a::before,#menu-item-settings a::before,#menu-item-restart a::before,.icomoon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.codex-mininav li:not(:last-child)::after,#custom-ui-bar-toggle2 .toggle-icon:before,.person-subtitle:before,.person-subtitle:after,.ilText::before,.ilText::after,.updateLabel:before,.updateLabel:after,.written .macro-cycle:after{
+    font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right:0.2em;
+}
+
+
+.icon-indie .path1:before {
+  content: "\e90d";
+  color: var(--alertR);
+}
+.icon-indie .path2:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: var(--alertG);
+}
+
+
+.icon-tri-kingdom .path1:before {
+  content: "\e90a";
+  color: var(--alertY);
+}
+.icon-tri-kingdom .path2:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: var(--alertR);
+}
+.icon-tri-kingdom .path3:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: var(--alertG);
+}
+
+.icon-a-timer:before {
+  content: "\e908";
+}
+
+
+.icon-flourish-l:before {
+  content: "\e903";
+}
+.icon-flourish-r:before {
+  content: "\e904";
+}
+.icon-guilder:before {
+  content: "\e905";
+}
+.icon-item:before {
+  content: "\e906";
+}
+.icon-physical:before {
+  content: "\e907";
+}
+.icon-minus:before {
+  content: "\e901";
+}
+.icon-opinion:before {
+  content: "\e900";
+}
+.icon-order:before {
+  content: "\e90e";
+}
+.icon-party:before {
+  content: "\e91b";
+}
+.icon-party-s:before,.snout .icon-party:before {
+  content: "\e92a";
+}
+.icon-pawn:before {
+  content: "\e939";
+}
+.icon-plus:before {
+  content: "\e93a";
+}
+.icon-queen:before {
+  content: "\e948";
+}
+.icon-quil:before,.icon-quill:before {
+  content: "\e949";
+}
+.icon-restart:before {
+  content: "\e94a";
+}
+.icon-return:before {
+  content: "\e94c";
+}
+.icon-rook:before {
+  content: "\e94d";
+}
+.icon-saves:before {
+  content: "\e94e";
+}
+.icon-save-d:before {
+  content: "\e950";
+}
+.icon-save-l:before {
+  content: "\e962";
+}
+.icon-save-s:before {
+  content: "\e972";
+}
+.icon-settings:before {
+  content: "\e982";
+}
+.icon-snout:before {
+  content: "\e983";
+}
+.icon-new-north:before,tag-nn:before {
+  content: "\e988";
+  color:var(--red);
+}
+.icon-deception:before {
+  content: "\e995";
+}
+.icon-dice:before {
+  content: "\e998";
+}
+.icon-empathy:before {
+  content: "\e9a7";
+}
+.icon-etiquette:before {
+  content: "\e9a9";
+}
+.icon-bishop:before {
+  content: "\e9b2";
+}
+.icon-king:before {
+  content: "\e9b5";
+}
+.icon-knight:before {
+  content: "\e9b6";
+}
+.icon-check:before {
+  content: "\e9b8";
+}
+.icon-cross:before {
+  content: "\e9b9";
+}
+.icon-appendix:before {
+  content: "\e9ba";
+}
+.icon-appendix-p:before {
+  content: "\e9bb";
+}
+.icon-a-end:before {
+  content: "\e9bc";
+}
+.icon-a-romance:before {
+  content: "\e9cc";
+}
+.icon-a-decision:before {
+  content: "\e9da";
+}
+.icon-south-kingdom:before,tag-south:before {
+  content: "\e9e9";
+    color: var(--alertR);
+}
+.icon-m-k:before,tag-middle:before {
+  content: "\e9f7";
+    color:var(--alertY);
+}
+.icon-m-k2:before,tag-middle2:before {
+  content: "\e9f8";
+  color:var(--alertY);
+}
+.icon-north-kingdom:before,tag-north:before {
+  content: "\e9f9";
+    color: var(--alertG);
+}
+.icon-cerostian:before {
+  content: "\e9fa";
+}
+.icon-meur-green:before,tag-green:before {
+  content: "\e9fb";
+    color: var(--green);
+}
+.icon-meur-red:before,tag-red:before {
+  content: "\ea01";
+  color: var(--red);
+}
+.icon-meur-blue:before,tag-blue:before {
+  content: "\ea05";
+  color: var(--blue);
+}
+.icon-meur-black:before,tag-black:before {
+  content: "\ea06";
+  color: var(--black);
+}
+.icon-hare:before {
+  content: "\ea07";
+}
+.icon-meur-white:before,tag-white:before {
+  content: "\ea08";
+  color: var(--white);
+}
+.icon-meur-yellow:before,tag-yellow:before {
+  content: "\ea0f";
+  color: var(--yellow);
+}
+
+
+.icon-meur-all .path1:before {
+  content: "\e916";
+  color: var(--white);
+
+}
+.icon-meur-all .path2:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: var(--white);
+
+}
+.icon-meur-all .path3:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: var(--blue);
+
+}
+.icon-meur-all .path4:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: var(--green);
+
+}
+.icon-meur-all .path5:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: var(--blue);
+
+}
+.icon-meur-all .path6:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: var(--green);
+
+}
+.icon-meur-all .path7:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: var(--yellow);
+
+}
+.icon-meur-all .path8:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: var(--red);
+
+}
+.icon-meur-all .path9:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: var(--black);
+}
+.icon-meur-all .path10:before {
+  content: "\e920";
+  margin-left: -1em;
+  color: var(--yellow);
+
+}
+.icon-meur-all .path11:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: var(--red);
+
+}
+.icon-meur-all .path12:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: var(--black);
+
+}
+
+.icon-a-hunch:before {
+  content: "\e924";
+}
+
+.icon-reputation:before {
+  content: "\e925";
+}
+
+.icon-a-romance-f:before {
+  content: "\e902";
+}
+.icon-appendix-d:before {
+  content: "\e909";
+}
+.icon-arrow-down:before {
+  content: "\e910";
+}
+.icon-arrow-up:before {
+  content: "\e911";
+}
+
+.icon-arrow-right:before {
+  content: "\e923";
+}
+
+.icon-bracket-l:before {
+  content: "\e912";
+}
+.icon-bracket-r:before {
+  content: "\e913";
+}
+.icon-bullet:before {
+  content: "\e914";
+}
+.icon-file:before {
+  content: "\e915";
+}

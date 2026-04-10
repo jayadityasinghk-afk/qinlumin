@@ -1,0 +1,288 @@
+.north {
+	color: var(--alertG);
+}
+
+.middle {
+	color: var(--alertY);
+}
+
+.south {
+	color: var(--alertR);
+}
+
+.alertG {
+	color: var(--alertG);
+}
+
+.alert,
+.alertY {
+	color: var(--alertY);
+}
+
+.alertR {
+	color: var(--alertR);
+}
+
+
+.red {
+	color: var(--red);
+}
+
+.pink {
+	color: var(--pink);
+}
+
+.yellow {
+	color: var(--yellow);
+}
+
+.green {
+	color: var(--green);
+}
+
+.blue {
+	color: var(--blue);
+}
+
+.blue2 {
+	color: var(--blue2);
+}
+
+.blue3 {
+	color: var(--blue3);
+}
+
+.black {
+	color: var(--black);
+}
+
+.white {
+	color: var(--white);
+}
+
+.accent {
+	color: var(--accent);
+}
+
+.accentD {
+	color: var(--ntgradient);
+}
+
+.accentH {
+	color: var(--h1color);
+}
+
+.accentHD {
+	color: var(--h1gradient);
+}
+
+.faded,
+.faded a,
+.disabled {
+	color: var(--fade);
+}
+
+.skillCheck {
+	font-variant: small-caps;
+	font-stretch: condensed;
+}
+
+.trait{
+ text-transform: lowercase;
+  position: relative;
+  bottom: 0.15em;
+  font-weight: bold;
+  display: inline-block;
+  transform: scaleX(0.75);
+  margin: -0.65em; 
+}
+
+.goldQ {
+
+	color: var(--alertSealQuestObj);
+}
+
+.silverQ {
+	color: var(--alertSealQuestMain);
+}
+
+.bronzeQ {
+	color: var(--alertSealQuestSide);
+}
+
+.talkText {
+	font-size: 1.05em;
+}
+
+word {
+	display: inline-block;
+}
+
+.talk-action {
+	color: var(--iltextcolor);
+	text-transform: lowercase;
+	font-variant: small-caps;
+	position: relative;
+	top: -0.1em;
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+
+		display:block;
+}
+
+.talk-action:before {
+	content: '〚';
+	speak: never;
+	position: relative;
+	top: 0.1em;
+}
+
+.talk-action:after {
+	content: '〛';
+	speak: never;
+	font-family: Arial;
+	position: relative;
+	top: 0.1em;
+}
+
+.atlantean{
+ font-family:var(--atlantisFont) !important;
+ text-transform:uppercase !important;
+}
+
+
+
+.surprise {
+	animation: shockCam 0.3s linear infinite;
+	display: inline-block;
+}
+
+.intense {
+	animation: intenseCam 0.3s linear infinite;
+	display: inline-block;
+}
+
+.yell {
+	font-size: 1.1em;
+	font-weight: 600;
+	transform: scaleY(1.1);
+	display: inline-block;
+	animation: shockCam 0.3s linear infinite;
+}
+
+.yell-loud {
+	font-size: 1.2em;
+	font-weight: 600;
+	animation: yellCam 1s linear infinite;
+	display: inline-block;
+	font-variant: small-caps;
+}
+
+
+.whisper {
+	font-size: 0.95em;
+	opacity: 0.66;
+	transition: opacity 1s;
+}
+
+.talk:hover .whisper {
+	opacity: 0.86;
+}
+
+.whisper:before {
+	content: '｟ ';
+}
+
+.whisper:after {
+	content: ' ｠';
+}
+
+.stutter {
+
+	display: inline-block;
+}
+
+.stutter .anim {
+	animation: stutterCam 0.5s linear infinite;
+	display: inline-block;
+}
+
+.lilt {
+	animation: liltCam 1s linear infinite;
+	display: inline-block;
+}
+
+.posh{
+ font-family:"cursive_serifoblique"; 
+ font-size: 0.9em;
+}
+
+
+.talkText:hover,
+.talkText:hover .anim,
+.talkText:hover .yell-loud,
+.talkText:hover .yell,
+.talkText:hover .slur,
+.talkText:hover .sing .anim,
+.talkText:hover .sing:after,
+.talkText:hover .singsong .anim,
+.talkText:hover .yell,
+.talkText:hover .surprise,
+.talkText:hover .lilt,.talkText:hover .intense {
+	animation-play-state: paused;
+}
+
+
+.slur {
+	animation: drunkCam 3s infinite linear;
+	animation-timing-function: ease;
+	display: inline-block;
+
+}
+
+
+.singsong .anim {
+	animation: singsongCam 0.75s infinite linear;
+	position: relative;
+	animation-timing-function: ease;
+}
+
+.sing .anim {
+	animation: singCam 2s infinite linear;
+	position: relative;
+	animation-timing-function: ease;
+}
+
+.sing {
+	font-style: italic;
+	color: var(--subtitle);
+	font-variant: small-caps;
+	text-transform: lowercase;
+	letter-spacing: 0.05em;
+	text-shadow: 0.04em 0.04em 0px var(--goldborderdarker);
+	font-size: 1.1em;
+}
+
+.sing:after {
+	content: " ♪";
+	font-size: 0.9em;
+	position: relative;
+	margin-top: -0.7em;
+	animation: singCam 1.5s infinite linear;
+	opacity: 0.75;
+}
+
+.sing:before {
+	content: "♪ ";
+	font-size: 0.9em;
+	position: relative;
+	margin-top: 0.3em;
+	animation: singCam 1.5s infinite linear;
+	opacity: 0.75;
+
+}
+
+.noTextAnim .sing,.noTextAnim .singsong,.noTextAnim .slur,.noTextAnim .stutter,.noTextAnim .yell,.noTextAnim .yell-loud,.noTextAnim .surprise, .noTextAnim .anim,.noTextAnim .intense{
+  animation:none;
+  	animation-play-state: paused;
+}
